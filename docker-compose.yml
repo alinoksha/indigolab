@@ -1,0 +1,30 @@
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    container_name: indigolab-php
+    volumes:
+      - ./:/app
+    working_dir: /app
+  nginx:
+    image: nginx:1.21.4-alpine
+    container_name: indigolab-nginx
+    volumes:
+      - ./:/app
+      - ./docker/nginx:/etc/nginx/conf.d
+    ports:
+      - 81:80
+    working_dir: /app
+  postgres:
+    image: postgres
+    container_name: indigolab-postgres
+    environment:
+      - POSTGRES_DB=indigolab
+      - POSTGRES_USER=indigolab
+      - POSTGRES_PASSWORD=indigolab
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    working_dir: /app

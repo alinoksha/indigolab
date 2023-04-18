@@ -1,0 +1,18 @@
+{
+    "name": "alinoksha/indigolab",
+    "autoload": {
+        "psr-4": {
+            "Alinoksha\\Indigolab\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alina",
+            "email": "khizbullina.alina@ya.ru"
+        }
+    ],
+    "require": {
+        "php-di/php-di": "^7.0",
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}

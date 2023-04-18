@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "postgres",
+    "port": 5432,
+    "dbname": "indigolab",
+    "user": "indigolab",
+    "password": "indigolab"
+  },
+  "telegramBotToken": "",
+  "hookSecret": "hookSecret",
+  "hashSalt": "hashSalt"
+}
